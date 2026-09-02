@@ -26,6 +26,7 @@ Each problem gets its own package, named in lowercase (e.g. `validparentheses`),
 | # | Problem | Package | Notes |
 |---|---------|---------|-------|
 | 1 | [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) | `leetcode.validparentheses` | Stack-based and `List`-based approaches |
+| 2 | [Merge Sorted Array](https://leetcode.com/problems/merge-sorted-array/) | `leetcode.mergesortedarray` | In-place merge from the back, three-pointer approach |
 
 ## Building & Running
 
