@@ -12,17 +12,22 @@ public class ValidParentheses {
             char c = s.charAt(i);
             if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
                 stack.push(c);
-            } else if (c == ')' && stack.pop().equals('(')) {
-                return true;
-            } else if (c == ']' && stack.pop().equals('[')) {
-                return true;
-            } else if (c == '}' && stack.pop().equals('{')) {
-                return true;
             } else {
-                return false;
+                if (stack.isEmpty()) {
+                    return false;
+                }
+
+                if (c == ')' && !stack.pop().equals('(')) {
+                    return false;
+                } else if (c == ']' && !stack.pop().equals('[')) {
+                    return false;
+                } else if (c == '}' && !stack.pop().equals('{')) {
+                    return false;
+                }
             }
+
         }
-        return false;
+        return stack.isEmpty();
     }
 
     public boolean isValid2(String s) {
@@ -37,7 +42,7 @@ public class ValidParentheses {
                         || (c == ']' && top == '[')
                         || (c == '}' && top == '{')) {
                     list.remove(list.size() - 1);
-                }else {
+                } else {
                     return false;
                 }
 
